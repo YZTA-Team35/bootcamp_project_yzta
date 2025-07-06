@@ -48,4 +48,5 @@
 - **Sprint Katılımcıları:** Ayşe, Büşr,Can, Kaan, Miray
 - **Screenshots:** 
  https://drive.google.com/drive/folders/1o4ZYZhRRextLOp2bmTJhIWI6ilfnbzqe
+ https://drive.google.com/drive/folders/1o4ZYZhRRextLOp2bmTJhIWI6ilfnbzqe
 
