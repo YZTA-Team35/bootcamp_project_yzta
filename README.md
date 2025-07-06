@@ -1,5 +1,11 @@
 # bootcamp_project_yzta
 <h1>Product Name</h1>
+
+- **Cilt Asistanı**
+
+- **Ürün Tanıtımı:** Kullanıcıların cilt sağlığını ve bakım rutinlerini yapay zekâ destekli analizlerle iyileştirmeyi amaçlayan bir web uygulamasıdır.
+Kullanıcılar, uygulamaya cilt lezyonlarının fotoğraflarını yükleyerek olası hastalık risklerini öğrenebilir, ayrıca soru ve görsellerle yapılan bir analizle cilt tiplerini belirleyip kişiselleştirilmiş bakım rutini alabilir. Uygulama, oluşturulan rutinin günlük takibini ve hatırlatmalarını da sağlar.
+
 <h2>Team Members</h2>
 <table>
   <thead>
@@ -45,8 +51,12 @@
 - **Sprint Retrospective:** Uygulamanın gidişatı konuşuldu, temel kısım bittiğinde farklı kullanımlar için geliştirilecek fikirler üretildi. Takım Frontend/ Backend ve Veri Analizi olarak ikiye bölündu. Kullanılacak teknolojiler ve gidilecek yollara karar verildi. 
      - **Frontend/Backend:** Miray, Büşra
      - **Veri Analizi** Ayşe, Kaan, Can 
-- **Sprint Katılımcıları:** Ayşe, Büşr,Can, Kaan, Miray
+- **Sprint Katılımcıları:** Ayşe, Büşra ,Can ,Kaan, Miray
 - **Screenshots:** 
  https://drive.google.com/drive/folders/1o4ZYZhRRextLOp2bmTJhIWI6ilfnbzqe
  https://drive.google.com/drive/folders/1o4ZYZhRRextLOp2bmTJhIWI6ilfnbzqe
+- **Sprint Notları:** 
+
+   - İkinci sprint daha hızlı ve etkili ilerlenmesi kararı alındı.
+   - Uygulamayı Web App olarak canlıya almak, vakit kalırsa Mobil App üzerinde çalışma yapılması kararı verildi.
 
