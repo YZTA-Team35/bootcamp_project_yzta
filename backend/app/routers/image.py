@@ -1,6 +1,7 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException , Depends
 from app.services.image_upload import upload_image_to_s3
-from app.services.predict import predict_image , get_current_user
+from app.services.predict import predict_image 
+from app.services.auth import get_current_user
 
 
 router = APIRouter()
