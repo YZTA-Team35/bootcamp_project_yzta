@@ -22,18 +22,23 @@ def predict_image(image_bytes: bytes) -> str:
     """
     S3'ten gelen resmi model ile sınıflandırır.
     """
-    try:
-        # ✅ Görseli oku ve modele uygun şekilde yeniden boyutlandır
-        image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-        image = image.resize((224, 224))  # EfficientNet genelde 224x224 alır, emin ol
-        image_array = np.array(image) / 255.0  # normalize et
-        image_array = np.expand_dims(image_array, axis=0)  # batch boyutu ekle (1, 224, 224, 3)
+     # Görseli PIL ile yükle
+    image = Image.open(io.BytesIO(image_bytes)).resize((224, 224))
+    img_array = np.array(image) / 255.0  # normalize et
+    img_array = np.expand_dims(img_array, axis=0)
 
-        # ✅ Modelle tahmin yap
-        predictions = model.predict(image_array)
-        predicted_class = CLASS_NAMES[np.argmax(predictions)]
+    # Tahmin yap
+    predictions = model.predict(img_array)
 
-        return predicted_class
+    # En yüksek olasılığı ve indeksini al
+    predicted_index = np.argmax(predictions)
+    confidence = float(predictions[0][predicted_index])
 
-    except Exception as e:
-        return f"Prediction failed: {str(e)}"
+    # Sınıf isimlerini burada belirt
+    class_names = ["acne", "eczema", "psoriasis", "melanoma"]  # Örnek olarak
+    predicted_class = class_names[predicted_index]
+
+    return {
+        "class": predicted_class,
+        "confidence": round(confidence * 100, 2)  # Yüzde olarak (%)
+    }
