@@ -60,3 +60,25 @@ Kullanıcılar, uygulamaya cilt lezyonlarının fotoğraflarını yükleyerek ol
    - İkinci sprint daha hızlı ve etkili ilerlenmesi kararı alındı.
    - Uygulamayı Web App olarak canlıya almak, vakit kalırsa Mobil App üzerinde çalışma yapılması kararı verildi.
 
+
+
+<h2>Sprint 2 </h2>
+
+- **Sprint içinde tamamlanması tahmin edilen puan:** 100/120 Puan
+
+- **Daily Srum:** Toplantıların Google Meets üzerinden haftalık alındı. Toplantıların dışında günlük güncelleme ve ilerlemelerin Whatsapp üzerinden takip edildi, birlikte çalışma ssırasında iletişim zayıflığı yaşanmadı.
+
+- **Sprint Board Update:** https://drive.google.com/drive/folders/1nqmhms4ntTwweRbOzIamXedk61XtCJhh?usp=sharing
+
+- **Sprint Reviev:** AI Modeli Eğitildi ve test edilde, yazılan backend geliştirildi ve calıya alındı, frontend geliştirildi, takım ve ürün ismine karar verildi, logo tasarımına başlandı.
+
+- **Sprint Retrospective:** Görev dağılılımının büyük bir kısmı aynı kaldı. Can, logo tasarımını üstlendi. Ayşe ve Kaan Modeli eğitirken Miray Backendi tamamladı ve canlıya aldı, Büşra ise Frontendi geliştirdi.
+
+- **Sprint Katılımcıları:** Ayşe, Büşra ,Can ,Kaan, Miray
+
+- **Sprint Notları:**
+ 
+     - İkinci sprint daha hızlı ilerlendi ve ekip içi iletişim güçlendi, üçüncü sprint için eklemeler yapma ihtimalleri konuşuldu.
+     - Uygulamanın Web App olarak kalmasına karar verildi.
+- **Screenshots:** 
+https://drive.google.com/drive/folders/1nqmhms4ntTwweRbOzIamXedk61XtCJhh?usp=drive_link
