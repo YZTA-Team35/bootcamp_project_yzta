@@ -89,6 +89,110 @@ window.addEventListener('load', function() {
     });
   }
 
+  // Mesaj inputuna tıklanınca dosya seçici aç
+  if (messageInput) {
+    messageInput.addEventListener('click', function(e) {
+      // Sadece ilk tıklamada dosya seçici aç
+      if (messageInput.type === 'text') {
+        e.preventDefault();
+        // Geçici bir file input oluştur
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        fileInput.style.display = 'none';
+        document.body.appendChild(fileInput);
+        fileInput.click();
+        fileInput.addEventListener('change', async function() {
+          if (fileInput.files && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            await sendImageToModel(file);
+          }
+          document.body.removeChild(fileInput);
+        });
+      }
+    });
+  }
+
+  // Görseli modele gönder
+  async function sendImageToModel(file) {
+    const predictMessage = document.getElementById('predictMessage');
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      window.location.href = '/signin';
+      return;
+    }
+    const formData = new FormData();
+    formData.append('file', file);
+    try {
+      predictMessage.style.color = '#fff';
+      predictMessage.textContent = 'Yükleniyor, lütfen bekleyin...';
+      // Kullanıcı görsel yüklediğinde user mesajı olarak ekle
+      addMessage('Bir görsel gönderdiniz.', 'user');
+      showTyping();
+      const response = await fetch('https://bootcampprojectyzta-production.up.railway.app/images/predict', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + token },
+        body: formData
+      });
+      const data = await response.json();
+      hideTyping();
+      predictMessage.textContent = '';
+      if (response.ok) {
+        // Modelden dönen json'u düzgün Türkçe metne çevir
+        let botMsg = '';
+        if (data.prediction && typeof data.prediction === 'object') {
+          const pred = data.prediction;
+          if (pred.class) {
+            botMsg += `Hastalık: ${pred.class}\n`;
+          }
+          if (pred.confidence !== undefined) {
+            botMsg += `Olasılık: %${Number(pred.confidence).toFixed(2)}\n`;
+          }
+          if (pred.explanation) {
+            botMsg += `Açıklama: ${pred.explanation}\n`;
+          }
+          // Diğer alanlar
+          Object.entries(pred).forEach(([k, v]) => {
+            if (!["class","confidence","explanation"].includes(k)) {
+              botMsg += `${k}: ${v}\n`;
+            }
+          });
+          botMsg = botMsg.trim();
+          if (!botMsg) botMsg = 'Modelden anlamlı bir sonuç alınamadı.';
+        } else if (data.result) {
+          botMsg = 'Tahmin: ' + data.result;
+        } else if (typeof data === 'object') {
+          // Sık karşılaşılan anahtarlar için özel metin
+          if (data.disease_name || data.disease || data.label) {
+            botMsg += `Hastalık: ${data.disease_name || data.disease || data.label}\n`;
+          }
+          if (data.probability || data.confidence) {
+            botMsg += `Olasılık: %${((data.probability || data.confidence) * 100).toFixed(1)}\n`;
+          }
+          if (data.explanation) {
+            botMsg += `Açıklama: ${data.explanation}\n`;
+          }
+          // Diğer alanları ekle
+          Object.entries(data).forEach(([k, v]) => {
+            if (!["result","disease_name","disease","label","probability","confidence","explanation"].includes(k)) {
+              botMsg += `${k}: ${v}\n`;
+            }
+          });
+          botMsg = botMsg.trim();
+          if (!botMsg) botMsg = 'Modelden anlamlı bir sonuç alınamadı.';
+        } else {
+          botMsg = JSON.stringify(data);
+        }
+        addMessage(botMsg, 'bot');
+      } else {
+        addMessage(data.detail || 'Tahmin başarısız!', 'bot');
+      }
+    } catch (err) {
+      hideTyping();
+      addMessage('Sunucuya ulaşılamıyor!', 'bot');
+    }
+  }
+
   console.log('Initialization complete!');});
 
 function sendMessage() { // mesaj gönderme

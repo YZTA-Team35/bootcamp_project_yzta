@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         messageDiv.textContent = '';
-        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         try {
             const response = await fetch('https://bootcampprojectyzta-production.up.railway.app/auth/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({ email, password })
             });
             const data = await response.json();
             if (response.ok && data.access_token) {
