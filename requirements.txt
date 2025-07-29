@@ -1,3 +1,7 @@
+
+fastapi
+uvicorn
+jinja2
 numpy
 matplotlib
 seaborn
@@ -5,3 +9,4 @@ scikit-learn
 tensorflow
 keras
 tensorflow-addons 
+
