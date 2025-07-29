@@ -51,7 +51,8 @@ body::before {
 
 /* input alanları */
 .signin-form input[type="text"],
-.signin-form input[type="password"] {
+.signin-form input[type="password"],
+.signin-form input[type="email"] {
   width: 100%;
   padding: 10px 12px;
   border: none;
@@ -60,11 +61,14 @@ body::before {
   color: #333;
   font-size: 1rem;
   outline: none;
-  transition: box-shadow 0.3s ease;}
+  transition: box-shadow 0.3s ease;
+}
 
 .signin-form input[type="text"]:focus,
-.signin-form input[type="password"]:focus {
-  box-shadow: 0 0 8px rgba(255,255,255,0.8);}
+.signin-form input[type="password"]:focus,
+.signin-form input[type="email"]:focus {
+  box-shadow: 0 0 8px rgba(255,255,255,0.8);
+}
 
 /* buton */
 .signin-form button {

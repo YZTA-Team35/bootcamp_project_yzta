@@ -35,6 +35,60 @@ window.addEventListener('load', function() {
   messageInput.addEventListener("input", function() {
     sendButton.disabled = messageInput.value.trim() === ""; });
   
+  // LOGIN KONTROLÜ
+  const token = localStorage.getItem('access_token');
+  if (!token) {
+    window.location.href = '/signin';
+    return;
+  }
+
+  // LOGOUT
+  const logoutButton = document.getElementById('logoutButton');
+  if (logoutButton) {
+    logoutButton.onclick = function() {
+      localStorage.removeItem('access_token');
+      window.location.href = '/signin';
+    };
+  }
+
+  // GÖRSEL YÜKLEME & TAHMİN
+  const imageForm = document.getElementById('imageUploadForm');
+  const imageInput = document.getElementById('imageInput');
+  const predictMessage = document.getElementById('predictMessage');
+  if (imageForm && imageInput && predictMessage) {
+    imageForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      predictMessage.textContent = '';
+      if (!imageInput.files || imageInput.files.length === 0) {
+        predictMessage.style.color = 'salmon';
+        predictMessage.textContent = 'Lütfen bir fotoğraf seçin!';
+        return;
+      }
+      const formData = new FormData();
+      formData.append('file', imageInput.files[0]);
+      try {
+        predictMessage.style.color = '#fff';
+        predictMessage.textContent = 'Yükleniyor, lütfen bekleyin...';
+        const response = await fetch('https://bootcampprojectyzta-production.up.railway.app/images/predict', {
+          method: 'POST',
+          headers: { 'Authorization': 'Bearer ' + token },
+          body: formData
+        });
+        const data = await response.json();
+        if (response.ok) {
+          predictMessage.style.color = 'lightgreen';
+          predictMessage.textContent = 'Tahmin: ' + (data.result || JSON.stringify(data));
+        } else {
+          predictMessage.style.color = 'salmon';
+          predictMessage.textContent = data.detail || 'Tahmin başarısız!';
+        }
+      } catch (err) {
+        predictMessage.style.color = 'salmon';
+        predictMessage.textContent = 'Sunucuya ulaşılamıyor!';
+      }
+    });
+  }
+
   console.log('Initialization complete!');});
 
 function sendMessage() { // mesaj gönderme
