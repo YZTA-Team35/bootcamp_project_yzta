@@ -11,7 +11,7 @@ templates = Jinja2Templates(directory="app/templates")
 
 @app.get("/", response_class=HTMLResponse) # home ekranı
 def home(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.get("/signin", response_class=HTMLResponse) # signin ekranı
 def signin_get(request: Request):
