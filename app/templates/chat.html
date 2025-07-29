@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatAssistan</title>
+  <link rel="stylesheet" href="/static/chat.css" />
+  <script src="/static/chat.js"></script>
+</head>
+<body>
+  <div class="chat-container">
+    <!-- başlık -->
+    <div class="chat-header">
+      <h1 class="chat-title">✨Dermatell Chat Assistan</h1>
+    </div>
+
+    <!-- Mesaj alanı-->
+    <div class="messages-container" id="messagesContainer">
+      <!-- giriş mesajı -->
+      <div class="message bot">
+       Merhaba ben Dermatell! Cilt asistanınızım. Cilt problemlerinizle ilgili önerilerim için fotoğraf yükleyebilir veya doğrudan soru sorabilirsiniz. 
+       ❗Yanıtlarım yalnızca öneridir.
+      </div>
+    </div>
+
+    <!-- giriş boxs -->
+    <div class="welcome-section" id="welcomeSection">
+      <div class="box" onclick="selectOption('✨ AI Asistan ile hızlı tanı koy.')">
+        <div class="box-content">
+          <div class="icon">✨</div>
+          <div class="label">AI Asistan ile hızlı tanı koy</div>
+        </div>
+      </div>
+      <div class="box" onclick="selectOption('📷 Görsel yükleme özelliğini kullanmak istiyorum.')">
+        <div class="box-content">
+          <div class="icon">📷</div>
+          <div class="label">Görsel yükle</div>
+        </div>
+      </div>
+      <div class="box" onclick="selectOption('🔎 Süreci nasıl takip edebilirim?')">
+        <div class="box-content">
+          <div class="icon">🔎</div>
+          <div class="label">Süreci kolayca takip et</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search box -->
+  <div class="search-container">
+    <div class="input-wrapper">
+      <input type="text" class="search-box" id="messageInput" placeholder="Mesajınızı yazın..." />
+      <button class="send-button" id="sendButton" onclick="sendMessage()">
+        ➤
+      </button>
+    </div>
+  </div>
+
+  <script src="/static/chat.js"></script>
+</body>
+</html>

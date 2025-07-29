@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/static/signin.css">
+</head>
+
+<body>
+    <div class="signin-wrapper">
+        <form action="/chat" method="get" class="signin-form">
+            <h2>Sign In</h2>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit">Signin</button>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+        </form>
+    </div>
+</body>
+</html>
+
+
