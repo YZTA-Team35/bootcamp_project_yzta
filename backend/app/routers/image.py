@@ -1,11 +1,13 @@
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, UploadFile, File, HTTPException , Depends
 from app.services.image_upload import upload_image_to_s3
-from app.services.predict import predict_image
+from app.services.predict import predict_image 
+from app.services.auth import get_current_user
+
 
 router = APIRouter()
 
 @router.post("/upload-image")
-async def upload_image(file: UploadFile = File(...)):
+async def upload_image(file: UploadFile = File(...), user=Depends(get_current_user)):
     """
     Görseli S3'e yükler ve public URL döner.
     """
@@ -20,7 +22,7 @@ async def upload_image(file: UploadFile = File(...)):
 
 
 @router.post("/predict")
-async def predict(file: UploadFile = File(...)):
+async def predict(file: UploadFile = File(...), user=Depends(get_current_user)):
     """
     Görsel dosyasını alır, modeli çalıştırır ve tahmin sonucunu döner.
     """
