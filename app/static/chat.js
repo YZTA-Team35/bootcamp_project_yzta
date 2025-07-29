@@ -69,7 +69,8 @@ window.addEventListener('load', function() {
       try {
         predictMessage.style.color = '#fff';
         predictMessage.textContent = 'Yükleniyor, lütfen bekleyin...';
-        const response = await fetch('https://bootcampprojectyzta-production.up.railway.app/images/predict', {
+        const response = await fetch(`${CONFIG.BASE_URL}/images/predict`, {
+
           method: 'POST',
           headers: { 'Authorization': 'Bearer ' + token },
           body: formData
@@ -129,7 +130,8 @@ window.addEventListener('load', function() {
       // Kullanıcı görsel yüklediğinde user mesajı olarak ekle
       addMessage('Bir görsel gönderdiniz.', 'user');
       showTyping();
-      const response = await fetch('https://bootcampprojectyzta-production.up.railway.app/images/predict', {
+      const response = await fetch(`${CONFIG.BASE_URL}/images/predict`, {
+
         method: 'POST',
         headers: { 'Authorization': 'Bearer ' + token },
         body: formData

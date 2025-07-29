@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         try {
-            const response = await fetch('https://bootcampprojectyzta-production.up.railway.app/auth/login', {
+            const response = await fetch(`${CONFIG.BASE_URL}/auth/login`, {
+
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
