@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('access_token', data.access_token);
                 messageDiv.style.color = 'lightgreen';
                 messageDiv.textContent = 'Başarıyla giriş yapıldı, yönlendiriliyorsunuz...';
-                setTimeout(() => { window.location.href = '/chat'; }, 1000);
+                // Başarılı giriş sonrası kullanıcıyı sohbet sayfasına (statik .html) yönlendir
+                setTimeout(() => { window.location.href = 'chat.html'; }, 1000);
             } else {
                 messageDiv.style.color = 'salmon';
                 messageDiv.textContent = data.detail || 'Giriş başarısız!';

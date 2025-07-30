@@ -37,17 +37,19 @@ window.addEventListener('load', function() {
   
   // LOGIN KONTROLÜ
   const token = localStorage.getItem('access_token');
-  if (!token) {
-    window.location.href = '/signin';
-    return;
-  }
+      if (!token) {
+        // Token yoksa kullanıcıyı statik giriş sayfasına yönlendir
+        window.location.href = 'signin.html';
+        return;
+      }
 
   // LOGOUT
   const logoutButton = document.getElementById('logoutButton');
   if (logoutButton) {
     logoutButton.onclick = function() {
-      localStorage.removeItem('access_token');
-      window.location.href = '/signin';
+          localStorage.removeItem('access_token');
+          // Çıkış sonrası statik giriş sayfasına yönlendir
+          window.location.href = 'signin.html';
     };
   }
 
@@ -118,10 +120,11 @@ window.addEventListener('load', function() {
   async function sendImageToModel(file) {
     const predictMessage = document.getElementById('predictMessage');
     const token = localStorage.getItem('access_token');
-    if (!token) {
-      window.location.href = '/signin';
-      return;
-    }
+        if (!token) {
+          // Token yoksa kullanıcıyı statik giriş sayfasına yönlendir
+          window.location.href = 'signin.html';
+          return;
+        }
     const formData = new FormData();
     formData.append('file', file);
     try {

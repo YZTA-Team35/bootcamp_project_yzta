@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 messageDiv.style.color = 'lightgreen';
                 messageDiv.textContent = 'Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...';
-                setTimeout(() => { window.location.href = '/signin'; }, 1200);
+                // Başarılı kayıt sonrası kullanıcıyı giriş sayfasına (statik .html) yönlendir
+                setTimeout(() => { window.location.href = 'signin.html'; }, 1200);
             } else {
                 messageDiv.style.color = 'salmon';
                 messageDiv.textContent = data.detail || 'Kayıt başarısız!';

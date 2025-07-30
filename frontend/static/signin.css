@@ -4,7 +4,8 @@ body, html {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background: url("./static/images/login-screen-image.png") no-repeat center center;
+  /* Düzeltilmiş: CSS dosyası static dizini içindedir; görüntüyü bir üst dizindeki images klasöründen yükle */
+  background: url("images/login-screen-image.png") no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
