@@ -11,15 +11,12 @@ def predict_image(image_bytes: bytes) -> dict:
     """
     Görseli işler, modelle tahmin yapar, sonucu ve Gemini açıklamasını döner.
     """
-    # Görseli oku ve dönüştür
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-    image = image.resize((224, 224))
+    image = image.resize((256, 256))  # yeni boyut
 
-    # Normalize ve batch boyutu ekle
     img_array = np.array(image) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)  # (1, 224, 224, 3)
+    img_array = np.expand_dims(img_array, axis=0)  # (1, 256, 256, 3)
 
-    # Modeli al ve tahmin yap
     model = get_model()
     predictions = model.predict(img_array)
 
@@ -27,7 +24,6 @@ def predict_image(image_bytes: bytes) -> dict:
     confidence = float(predictions[0][predicted_index])
     predicted_class = CLASS_NAMES[predicted_index]
 
-    # Gemini'den açıklama al
     explanation = explain_prediction_with_gemini(predicted_class)
 
     return {
