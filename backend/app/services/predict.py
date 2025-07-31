@@ -5,28 +5,7 @@ from app.ml.model_loader import get_model
 from app.services.explanation import explain_prediction_with_gemini
 
 # Eğitimdeki sınıf isimleri
-CLASS_NAMES = [
-    "Acne and Rosacea Photos",
-    "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesions",
-    "Atopic Dermatitis Photos",
-    "Bullous Disease Photos",
-    "Cellulitis Impetigo and other Bacterial Infections",
-    "Eczema Photos",
-    "Exanthems and Drug Eruptions",
-    "Herpes HPV and other STDs Photos",
-    "Light Diseases and Disorders of Pigmentation",
-    "Lupus and other Connective Tissue diseases",
-    "Melanoma Skin Cancer Nevi and Moles",
-    "Poison Ivy Photos and other Contact Dermatitis",
-    "Psoriasis pictures Lichen Planus and related diseases",
-    "Seborrheic Keratoses and other Benign Tumors",
-    "Systemic Disease",
-    "Tinea Ringworm Candidiasis and other Fungal Infections",
-    "Urticaria Hives",
-    "Vascular Tumors",
-    "Vasculitis Photos",
-    "Warts Molluscum and other Viral Infections"
-]
+CLASS_NAMES = ['Actinic keratosis', 'Basal cell carcinoma', 'Benign keratosis', 'Dermatofibroma', 'Melanocytic nevus', 'Melanoma', 'Squamous cell carcinoma', 'Vascular lesion']
 
 def predict_image(image_bytes: bytes) -> dict:
     """

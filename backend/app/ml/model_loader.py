@@ -1,6 +1,6 @@
 from keras.models import load_model
 from pathlib import Path
-MODEL_PATH = Path(__file__).resolve().parent.parent / "ml" / "best_efficientnet_finetuned.h5"  # .h5 dosyanın adı buysa
+MODEL_PATH = Path(__file__).resolve().parent.parent / "ml" / "SkinDiseaseWeightsPre1.h5"  # .h5 dosyanın adı buysa
 
 model = None
 
