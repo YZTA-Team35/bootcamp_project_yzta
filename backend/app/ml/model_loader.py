@@ -1,7 +1,7 @@
 from keras.models import load_model
 from pathlib import Path
 
-MODEL_PATH = Path(_file_).resolve().parent.parent / "ml" / "skin_disease_rgb_final.keras"
+MODEL_PATH = Path(__file__).resolve().parent.parent / "ml" / "skin_disease_rgb_final.keras"
 
 model = None
 
@@ -14,5 +14,5 @@ def get_model():
         except Exception as e:
             print(f"Model yüklenirken hata oluştu: {e}")
             model = None
-            
+
             return model
