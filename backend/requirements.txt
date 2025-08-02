@@ -74,7 +74,6 @@ tensorboard==2.19.0
 tensorboard-data-server==0.7.2
 
 tensorflow-cpu==2.19.0
-keras==3.3.3
 numpy==1.26.4
 
 tensorflow-io-gcs-filesystem==0.37.1
