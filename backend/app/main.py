@@ -21,6 +21,8 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
+        "http://127.0.0.1:8001",  # local frontend
+        "http://localhost:8001",
         "https://bootcampprojectyzta-production.up.railway.app"
     ],  # Sadece local ve Railway backend izinli
     allow_credentials=True,
