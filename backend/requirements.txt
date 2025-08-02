@@ -3,7 +3,7 @@ alembic==1.16.4
 annotated-types==0.7.0
 anyio==4.9.0
 astunparse==1.6.3
-bcrypt==4.3.0
+bcrypt==4.0.1
 boto3==1.39.4
 botocore==1.39.4
 cachetools==5.5.2

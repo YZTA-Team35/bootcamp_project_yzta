@@ -11,13 +11,17 @@ def predict_image(image_bytes: bytes) -> dict:
     """
     Görseli işler, modelle tahmin yapar, sonucu ve Gemini açıklamasını döner.
     """
-    image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-    image = image.resize((256, 256))  # yeni boyut
+    image = Image.open(io.BytesIO(image_bytes)).convert("L")  # Grayscale
+    image = image.resize((256, 256))
 
     img_array = np.array(image) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)  # (1, 256, 256, 3)
+    img_array = np.expand_dims(img_array, axis=-1)  # (256, 256, 1)
+    img_array = np.expand_dims(img_array, axis=0)   # (1, 256, 256, 1)
 
     model = get_model()
+    if model is None:
+        raise RuntimeError("Model yüklenemedi.")
+
     predictions = model.predict(img_array)
 
     predicted_index = np.argmax(predictions)
