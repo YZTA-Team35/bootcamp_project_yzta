@@ -1,7 +1,7 @@
 from keras.models import load_model
 from pathlib import Path
 
-MODEL_PATH = Path(__file__).resolve().parent.parent / "ml" / "SkinDiseaseWeightsPre1.h5"
+MODEL_PATH = Path(__file__).resolve().parent.parent / "ml" / "skin_disease_complete_model.h5"
 
 model = None
 
