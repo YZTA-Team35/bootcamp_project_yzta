@@ -1,10 +1,11 @@
 # bootcamp_project_yzta
-<h1>Product Name</h1>
 
-- **Cilt Asistanı**
+<h1>Dermatell</h1>
+
+- **Yapay Zeka Destekli Cilt Asistanı**
 
 - **Ürün Tanıtımı:** Kullanıcıların cilt sağlığını ve bakım rutinlerini yapay zekâ destekli analizlerle iyileştirmeyi amaçlayan bir web uygulamasıdır.
-Kullanıcılar, uygulamaya cilt lezyonlarının fotoğraflarını yükleyerek olası hastalık risklerini öğrenebilir, ayrıca soru ve görsellerle yapılan bir analizle cilt tiplerini belirleyip kişiselleştirilmiş bakım rutini alabilir. Uygulama, oluşturulan rutinin günlük takibini ve hatırlatmalarını da sağlar.
+Kullanıcılar, uygulamaya cilt lezyonlarının fotoğraflarını yükleyerek olası hastalık risklerini öğrenebilir, ayrıca soru ve görsellerle yapılan bir analizle cilt tiplerini belirleyip kişiselleştirilmiş bakım rutini alabilir. Uygulamanin gelişmiş aşamalarında kişisel bakım rutini oluşturma ve rutinin günlük takibini de sağlar.
 
 <h2>Team Members</h2>
 <table>
@@ -82,3 +83,34 @@ Kullanıcılar, uygulamaya cilt lezyonlarının fotoğraflarını yükleyerek ol
      - Uygulamanın Web App olarak kalmasına karar verildi.
 - **Screenshots:** 
 https://drive.google.com/drive/folders/1nqmhms4ntTwweRbOzIamXedk61XtCJhh?usp=drive_link
+
+
+<h2>Sprint 3 </h2>
+
+- **Sprint içinde tamamlanması tahmin edilen puan:** 60/60 Puan
+
+- **Puan tamamlama mantığı:** Projenin bitmesi için kalan 60 puan
+
+- **Daily Scrum:** Toplantıların Google Meets üzerinden gerektikçe alındı. Günlük güncellemeler Whatsapp üzerinden yapıldı.
+
+- **Sprint Board Update:** https://drive.google.com/file/d/1GYUQwamcQRnyXo8FjE1gg81urJltdJlj/view?usp=sharing
+
+- **Sprint Retrospective:** Görev dağılımında bir değişiklik olmadı. Herkes kendi alanıyla ilgili olan kısmı geliştirmeye devam etti.
+
+- **Sprint Katılımcıları:** Ayşe, Büşra ,Can ,Kaan, Miray
+
+- **Sprint Notları:**
+ 
+     - Uygulama canlıya alındı  fakat test aşamasında olan bazı sorunlar çözülemedi.
+       
+- **Screenshots:** https://drive.google.com/drive/folders/154AvEsI4oZMtHVDhfEjtKgOfLpMvYJUp
+
+
+       
+
+
+
+
+
+
+
